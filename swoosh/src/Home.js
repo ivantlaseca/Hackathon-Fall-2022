@@ -8,18 +8,44 @@ function Home(){
             <div>
                 <h1>Welcome</h1>
             </div>
-            <div id="titles">
-                <h2>Cycles</h2>
-            </div>
-            <div id="info">
-                <h3>Washer</h3>
-                <h3>Dryer</h3>
-            </div>
-            <div id="pageSelector">
+            <table class="homePage">
+                <tr>
+                    <th>Cycles</th>
+                    <th>Level</th>
+                    <th>Time Remaining</th>
+                </tr>
+                <tr>
+                    <td>Washer</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="dropbtn">Wash</button>
+                            <div class="dropdown-content">
+                                <a href="#">Rinse</a>
+                                <a href="#">Spill</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>12:00</td>
+                </tr>
+                <tr>
+                    <td>Dryer</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="dropbtn">Low Heat</button>
+                            <div class="dropdown-content">
+                                <a href="#">Medium Heat</a>
+                                <a href="#">High Heat</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>12:00</td>
+                </tr>
+            </table>
+            <div class="pageSelector">
                 <button onClick={() => pageInfo.setShowHome(true)}>Home</button>
-                <button onClick={() => pageInfo.setShowWasher(true)}>Washer</button>
-                <button onClick={() => pageInfo.setShowDryer(true)}>Dryer</button>
-                <button onClick={() => pageInfo.setShowSettings(true)}>Settings</button>
+                <button onClick={() => [pageInfo.setShowHome(false), pageInfo.setShowWasher(true)]}>Washer</button>
+                <button onClick={() => [pageInfo.setShowHome(false), pageInfo.setShowDryer(true)]}>Dryer</button>
+                <button onClick={() => [pageInfo.setShowHome(false), pageInfo.setShowSettings(true)]}>Settings</button>
             </div>
         </main>
     );
